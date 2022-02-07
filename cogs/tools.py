@@ -4,7 +4,7 @@ import requests, json
 import random
 from random import randint
 
-api_key = "fd2faee6032e23496473f771ceb53719"
+api_key = API_KEY
 base_url = "http://api.openweathermap.org/data/2.5/weather?"
 pays_dict = {"Afghanistan":0,"Albanie":1,"Algérie":2,"Argentine":6,"Arménie":7,"Australie":8,
              "Belgique":16,"Brésil":23,"Canada":30,"Chine":35,"Danemark":46,"Egypte":51,"France":59,"Allemagne":63,
