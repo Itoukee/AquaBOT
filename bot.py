@@ -3,7 +3,9 @@ from discord.ext import commands
 import os
 import asyncio
 import time
+from dotenv import dotenv_values
 
+config = dotenv_values(".env") 
 
 bot = commands.Bot(command_prefix = '%')
 
@@ -52,4 +54,4 @@ async def on_ready():
     #await asyncio.create_task(clock(86400))
 
 
-bot.run(TOKEN)
+bot.run(config["BOT_TOKEN"])

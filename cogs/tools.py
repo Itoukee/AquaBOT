@@ -3,8 +3,10 @@ from discord.ext import commands
 import requests, json
 import random
 from random import randint
+from dotenv import dotenv_values
 
-api_key = "fd2faee6032e23496473f771ceb53719"
+config = dotenv_values("../.env")
+
 base_url = "http://api.openweathermap.org/data/2.5/weather?"
 pays_dict = {"Afghanistan":0,"Albanie":1,"Algérie":2,"Argentine":6,"Arménie":7,"Australie":8,
              "Belgique":16,"Brésil":23,"Canada":30,"Chine":35,"Danemark":46,"Egypte":51,"France":59,"Allemagne":63,
@@ -19,7 +21,7 @@ class Tools(commands.Cog):
     @commands.command()
     async def meteo(self,ctx,*,ville):
         city_name = ville
-        complete_url = base_url+"appid="+api_key+"&q="+city_name
+        complete_url = base_url+"appid="+config["API_KEY"]+"&q="+city_name
         response = requests.get(complete_url)
         x = response.json()
 
